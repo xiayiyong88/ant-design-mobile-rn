@@ -7,6 +7,8 @@ Here list some of main incompatible changes and recommended changes in the upgra
 
 ### 3.0.0
 
+**3.0.0** needs to install `react-native@0.57.x`
+
 - Change import to `import { Button, ... } from '@ant-design/react-native`
 - Change `LocaleProvider` to `Provider` and the Provider are required from now on.
 
@@ -46,6 +48,15 @@ Here list some of main incompatible changes and recommended changes in the upgra
 
   ```sh
   react-native link @ant-design/icons-react-native
+  ```
+
+
+  If you are at react-native@0.60.x after you install the package it will link automatically.
+
+  or if you want link it manually.
+
+  ```sh
+  react-native link @ant-design/react-native
   ```
 
 ### 2.1.11 and before

@@ -73,12 +73,14 @@ rootTag: document.getElementById("root")
             extends: 'react-app',
           },
           dependencies: {
-            '@ant-design/react-native': '^3.0.0',
+            '@ant-design/react-native': '3.1.15',
             'antd-mobile-rn-scripts': 'latest',
             react: '^16.6.0',
             'react-art': '^16.6.0',
             'react-dom': '^16.6.0',
-            'react-native-web': '^0.9.6',
+            'react-native-web': '^0.11.0',
+            'antd-mobile-demo-data': '^0.2.0',
+            '@bang88/china-city-data': '^1.0.0',
           },
           browserslist: [
             '>0.2%',

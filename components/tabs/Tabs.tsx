@@ -1,5 +1,6 @@
 import React from 'react';
-import { Animated, Dimensions, LayoutChangeEvent, NativeScrollEvent, NativeSyntheticEvent, Platform, ScrollView, ViewPagerAndroid } from 'react-native';
+import { Animated, Dimensions, LayoutChangeEvent, NativeScrollEvent, NativeSyntheticEvent, Platform, ScrollView } from 'react-native';
+import ViewPagerAndroid from '@react-native-community/viewpager';
 import { WithTheme, WithThemeStyles } from '../style';
 import View from '../view';
 import { DefaultTabBar } from './DefaultTabBar';
@@ -103,7 +104,7 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
           key="$content"
           keyboardDismissMode="on-drag"
           initialPage={currentTab}
-          scrollEnabled={usePaged}
+          scrollEnabled={this.props.swipeable || usePaged}
           onPageScroll={e => {
             this.state.scrollX.setValue(
               e.nativeEvent.position * this.state.containerWidth,
@@ -196,7 +197,7 @@ export class Tabs extends React.PureComponent<TabsProps, StateType> {
       if (this.scrollView && this.scrollView._component) {
         const { scrollTo } = this.scrollView._component;
         // tslint:disable-next-line:no-unused-expression
-        scrollTo && scrollTo({ x: offset, animated });
+        scrollTo && scrollTo.call(this.scrollView._component, { x: offset, animated });
       }
     }
   };

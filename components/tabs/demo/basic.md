@@ -9,7 +9,7 @@ title:
 
 ```jsx
 import React from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, View, TouchableOpacity } from 'react-native';
 import { Tabs } from '@ant-design/react-native';
 const renderContent = (tab, index) => {
   const style = {
@@ -57,6 +57,57 @@ export default class BasicTabsExample extends React.Component {
     return (
       <View style={{ flex: 1 }}>
         <Tabs tabs={tabs}>
+          <View style={style}>
+            <Text>Content of First Tab</Text>
+          </View>
+          <View style={style}>
+            <Text>Content of Second Tab</Text>
+          </View>
+          <View style={style}>
+            <Text>Content of Third Tab</Text>
+          </View>
+        </Tabs>
+        <Text style={{ margin: 16 }}>Custom RenderTabBar</Text>
+        <Tabs
+          tabs={tabs}
+          renderTabBar={tabProps => (
+            <View
+              style={{
+                paddingHorizontal: 16,
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-evenly',
+              }}
+            >
+              {tabProps.tabs.map((tab, i) => (
+                // change the style to fit your needs
+                <TouchableOpacity
+                  activeOpacity={0.9}
+                  key={tab.key || i}
+                  style={{
+                    // width: '30%',
+                    padding: 6,
+                  }}
+                  onPress={() => {
+                    const { goToTab, onTabClick } = tabProps;
+                    // tslint:disable-next-line:no-unused-expression
+                    onTabClick && onTabClick(tabs[i], i);
+                    // tslint:disable-next-line:no-unused-expression
+                    goToTab && goToTab(i);
+                  }}
+                >
+                  <Text
+                    style={{
+                      color: tabProps.activeTab === i ? 'green' : undefined,
+                    }}
+                  >
+                    {tab.title}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          )}
+        >
           <View style={style}>
             <Text>Content of First Tab</Text>
           </View>

@@ -17,6 +17,7 @@ subtitle: 日期选择
 ----|-----|------|------
 | mode  | 日期选择的类型, 可以是日期`date`,时间`time`,日期+时间`datetime`,年`year`,月`month` | String | `date` |
 | value | 当前选中时间 | Date | 无 |
+| defaultDate | 默认选中时间 | Date | 无 |
 | minDate   | 最小可选日期 | Date  |  2000-1-1  |
 | maxDate   | 最大可选日期 | Date  |  2030-1-1  |
 | minuteStep |  分钟数递增步长设置   | Number | 1 |
@@ -34,4 +35,4 @@ subtitle: 日期选择
 
 注意：日期字符串在不同浏览器有不同的实现，例如 `new Date('2017-1-1')` 在 Safari 上是 Invalid Date，而在 Chrome 上是能正常解析的。
 
-注意：`DatePicker` children 建议是 `List.Item`, 如果不是，需要是自定义组件(组件内需处理 `onClick` / `extra` / `children` 属性，详情请看 [demo](https://mobile.ant.design/components/date-picker)
+注意：`DatePicker` children 建议是 `List.Item`, 如果不是，需要是自定义组件(组件内需处理 `onClick` / `extra` / `children` 属性，详情请看 [demo](/components/date-picker-cn)

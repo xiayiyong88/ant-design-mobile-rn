@@ -16,6 +16,7 @@ Properties | Descrition | Type | Default
 -----------|------------|------|--------
 | mode  | mode value, can be a `date` or `time` or `datetime` or `year` or `month` | String | `date` |
 | value | the currently selected value | Date | - |
+| defaultDate | the default selected value | Date | - |
 | minDate   | minimum date | Date  |  2000-1-1  |
 | maxDate   | maximum date | Date  |  2030-1-1  |
 | minuteStep |   The amount of time, in minutes, between each minute item.    | Number | 1 |
@@ -33,4 +34,4 @@ Properties | Descrition | Type | Default
 
 Note: The date strings have different implementations in different browsers. For example, `new Date ('2017-1-1')` is an Invalid Date on Safari but is parsed properly on Chrome.
 
-Note: We suggest DatePicker's children to be `List.Item`, if not, you need to be a custom component which accept and handle `onClick` / `extra` / `chidlren` props, see [demo](https://mobile.ant.design/components/date-picker)
+Note: We suggest DatePicker's children to be `List.Item`, if not, you need to be a custom component which accept and handle `onClick` / `extra` / `chidlren` props, see [demo](/components/date-picker)
